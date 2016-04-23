@@ -39,19 +39,19 @@ embedding <- as.data.frame(tsne$Y)
 embedding$Class <- as.factor(wine$Class)
 
 
-ggplot(embedding, aes(x = V1, y = V2, color = Class)) 
-                  + geom_point(size = 1.25) + xlab('') 
-                  + ylab('') 
-                  + ggtitle('Wine t-SNE 2D embedding') 
-                  + theme_light(base_size = 20) 
-                  + theme(strip.background = element_blank(),
-                      strip.text.x     = element_blank(),
-                      axis.text.x      = element_blank(),
-                      axis.text.y      = element_blank(),
-                      axis.ticks       = element_blank(),
-                      axis.line        = element_blank(),
-                      panel.border     = element_blank()
-)
+# ggplot(embedding, aes(x=V1, y=V2, color=Class)) +
+#   geom_point(size=1.25) +
+#   guides(colour = guide_legend(override.aes = list(size=6))) +
+#   xlab("") + ylab("") +
+#   ggtitle("t-SNE 2D Embedding of Products Data") +
+#   theme_light(base_size=20) +
+#   theme(strip.background = element_blank(),
+#         strip.text.x     = element_blank(),
+#         axis.text.x      = element_blank(),
+#         axis.text.y      = element_blank(),
+#         axis.ticks       = element_blank(),
+#         axis.line        = element_blank(),
+#         panel.border     = element_blank())
 
 embedding$Class <- factor(embedding$Class, labels = c('Red Wine', 'White Wine'))
 
